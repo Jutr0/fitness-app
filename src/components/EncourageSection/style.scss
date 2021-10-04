@@ -1,0 +1,14 @@
+@import '../../utils/colors';
+
+.encourageSection {
+	background-color: $color-primary;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 64px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding-top: 128px;
+}

@@ -1,0 +1,48 @@
+@import '../../../utils/colors';
+
+.encourage__element {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	margin: 128px 0;
+	.encourage__image-container {
+		width: 40vw;
+		min-width: 400px;
+		height: 40vw;
+		min-height: 400px;
+		position: relative;
+		.encourage__image {
+			width: 100%;
+			height: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			z-index: 2;
+			position: relative;
+		}
+		&::before {
+			z-index: 1;
+			content: '';
+			display: block;
+			position: absolute;
+			top: -10%;
+			left: 10%;
+			width: 100%;
+			height: 100%;
+			background-color: $color-secondary;
+		}
+	}
+	.encourage__description {
+		width: 40vw;
+		text-align: center;
+		font-family: Montserrat;
+		font-size: 1.2rem;
+	}
+	&:nth-child(2n) {
+		flex-direction: row-reverse;
+		.encourage__image-container::before {
+			left: -10%;
+		}
+	}
+}
