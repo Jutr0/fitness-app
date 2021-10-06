@@ -12,8 +12,9 @@ export const EncourageElement = lazy(
 export const ChangeTimeSection = lazy(
 	() => import('./ChangeTimeSection/ChangeTimeSection'),
 );
-
 export const Register = lazy(() => import('./Register/Register'));
 export const BackArrow = lazy(() => import('./BackArrow/BackArrow'));
-
 export const Login = lazy(() => import('./Login/Login'));
+export const QuestionListItem = lazy(
+	() => import('./QuestionListItem/QuestionListItem'),
+);

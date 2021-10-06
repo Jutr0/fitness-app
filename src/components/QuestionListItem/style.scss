@@ -1,0 +1,45 @@
+@import '../../utils/colors';
+
+.question__item {
+	margin-top: 25px;
+	list-style-type: none;
+	label {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		input[type='checkbox'] {
+			width: 0;
+			height: 50px;
+			position: relative;
+			&::before {
+				content: '';
+				width: 50px;
+				height: 50px;
+				background-color: $color-gray;
+				display: block;
+				cursor: pointer;
+			}
+			&::after {
+				content: '';
+				width: 0px;
+				height: 0px;
+				top: 25px;
+				position: absolute;
+				display: block;
+				left: 25px;
+				transition: all 0.1s ease-in-out;
+				background-color: $color-secondary;
+				cursor: pointer;
+			}
+			&:checked::after {
+				width: 30px;
+				height: 30px;
+				top: 10px;
+				left: 10px;
+			}
+		}
+		.question__text {
+			margin-left: 75px;
+		}
+	}
+}

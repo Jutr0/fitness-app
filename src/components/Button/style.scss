@@ -4,11 +4,14 @@
 	cursor: pointer;
 	outline: none;
 	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
 	&:focus-visible {
 		outline: 2px solid WHITE;
 	}
 	img {
 		position: absolute;
-		transform: translate(20%, 40%);
+		transform: translateX(150%);
 	}
 }

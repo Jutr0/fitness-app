@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 
 import { Button } from '..';
 
@@ -7,6 +8,11 @@ import bgHome from '../../static/bgHome.svg';
 import './style.scss';
 
 function Home() {
+	const history = useHistory();
+
+	const handleClick = () => {
+		history.push('/questions');
+	};
 	return (
 		<div className="homeContainer">
 			<div className="homeBg" style={{ backgroundImage: `url('${bgHome}')` }}>
@@ -21,6 +27,7 @@ function Home() {
 					type="outlined"
 					text="Zacznij trening"
 					color="secondary"
+					onClick={handleClick}
 				/>
 			</div>
 		</div>

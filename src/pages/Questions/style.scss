@@ -1,0 +1,42 @@
+@import '../../utils/colors';
+
+.questionsContainer {
+	background-color: $color-primary;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	header {
+		margin-top: 0;
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			height: 100px;
+			width: 70%;
+			left: 0;
+			margin-top: -75px;
+			background-color: $color-light-gray;
+			z-index: 0;
+		}
+		h1 {
+			position: relative;
+			z-index: 1;
+			margin: 0;
+			text-transform: uppercase;
+		}
+	}
+	ul {
+		width: 60%;
+	}
+	.button {
+		font-size: 2rem;
+		padding: 8px !important;
+		position: absolute;
+		right: 64px;
+		bottom: 64px;
+	}
+}

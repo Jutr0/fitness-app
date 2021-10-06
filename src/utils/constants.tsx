@@ -25,3 +25,17 @@ export const ENCOURAGE_ELEMENTS: IEncourageElement[] = [
 		image: enPhoto4,
 	},
 ];
+
+export const INJURIES: IInjury[] = [
+	{ text: 'Złamana ręka' },
+	{ text: 'Złamana noga' },
+	{ text: 'Skręcona kostka' },
+	{ text: 'Zerwany dwugłowy uda' },
+	{ text: 'Złamana ręka' },
+	{ text: 'Złamana noga' },
+	{ text: 'Skręcona kostka' },
+	{ text: 'Zerwany dwugłowy uda' },
+];
+export type IInjury = {
+	text: string;
+};
