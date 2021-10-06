@@ -10,6 +10,7 @@ function Button({
 	color = 'primary',
 	size = 'normal',
 	arrow = false,
+	onClick = () => {},
 }: IButton) {
 	const pickedColor = color === 'primary' ? colors.primary : colors.secondary;
 	let pickedSize = '300px';
@@ -34,6 +35,7 @@ function Button({
 					width: pickedSize,
 					padding: pickedPadding,
 				}}
+				onClick={onClick}
 			>
 				{text}
 				{arrow ? <img src={arrowSvg} alt="Arrow" /> : null}
@@ -49,4 +51,5 @@ export type IButton = {
 	color?: 'primary' | 'secondary';
 	size?: 'large' | 'normal' | 'small';
 	arrow?: Boolean;
+	onClick?: (x?: any) => void;
 };

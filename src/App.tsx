@@ -1,21 +1,20 @@
-import React from 'react';
-import {
-	ChangeTimeSection,
-	EncourageSection,
-	Home,
-	Navbar,
-} from './components';
+import React, { Suspense } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import { Authentication, Landing } from './pages';
 
 import './style.scss';
 
 function App() {
 	return (
-		<div>
-			<Navbar />
-			<Home />
-			<EncourageSection />
-			<ChangeTimeSection />
-		</div>
+		<Router>
+			<Suspense fallback={<div>Loading...</div>}>
+				<Switch>
+					<Route path="/authentication" exact component={Authentication} />
+					<Route path="/" exact component={Landing} />
+				</Switch>
+			</Suspense>
+		</Router>
 	);
 }
 
