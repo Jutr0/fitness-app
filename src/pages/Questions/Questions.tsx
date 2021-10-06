@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router';
-import { QuestionListItem } from '../../components';
+import { BackArrow, HeadingWithBG, QuestionListItem } from '../../components';
 import Button from '../../components/Button/Button';
 import { INJURIES } from '../../utils/constants';
 
@@ -14,25 +14,24 @@ function Questions() {
 	};
 
 	return (
-		<main className="questionsContainer">
-			<header>
-				<h1>
-					Miałeś jakieś <span> kontuzje</span>?
-				</h1>
-			</header>
-			<ul>
-				{INJURIES.map((step) => (
-					<QuestionListItem {...step} />
-				))}
-			</ul>
-			<Button
-				text="DALEJ"
-				type="filled"
-				color="secondary"
-				size="large"
-				onClick={handleClick}
-			/>
-		</main>
+		<>
+			<main className="questionsContainer">
+				<HeadingWithBG text="Miałeś jakieś ~kontuzje@ ?" />
+				<ul>
+					{INJURIES.map((step) => (
+						<QuestionListItem {...step} />
+					))}
+				</ul>
+				<Button
+					text="DALEJ"
+					type="filled"
+					color="secondary"
+					size="large"
+					onClick={handleClick}
+				/>
+			</main>
+			<BackArrow />
+		</>
 	);
 }
 

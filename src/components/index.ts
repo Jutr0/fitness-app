@@ -18,3 +18,7 @@ export const Login = lazy(() => import('./Login/Login'));
 export const QuestionListItem = lazy(
 	() => import('./QuestionListItem/QuestionListItem'),
 );
+export const HeadingWithBG = lazy(
+	() => import('./HeadingWithBG/HeadingWithBG'),
+);
+export const MusclePart = lazy(() => import('./MusclePart/MusclePart'));
