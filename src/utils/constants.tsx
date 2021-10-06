@@ -9,6 +9,10 @@ import musclePhoto1 from '../static/rece.jpg';
 import musclePhoto2 from '../static/tors.jpg';
 import musclePhoto3 from '../static/nogi.jpg';
 
+import difficultyPhoto1 from '../static/noob.jpg';
+import difficultyPhoto2 from '../static/bambi.jpg';
+import difficultyPhoto3 from '../static/pro.jpg';
+
 export const ENCOURAGE_ELEMENTS: IEncourageElement[] = [
 	{
 		description: 'Pot jest grubym płaczem',
@@ -61,5 +65,25 @@ export const MUSCLE_PARTS: IMusclePart[] = [
 
 export type IMusclePart = {
 	title: string;
+	image: string;
+};
+
+export const DIFFICULTY_LEVELS: IDifficultyLevel[] = [
+	{
+		text: 'dopiero zaczynam',
+		image: difficultyPhoto1,
+	},
+	{
+		text: 'coś ćwiczyłem',
+		image: difficultyPhoto2,
+	},
+	{
+		text: 'regularnie trenuję',
+		image: difficultyPhoto3,
+	},
+];
+
+export type IDifficultyLevel = {
+	text: string;
 	image: string;
 };

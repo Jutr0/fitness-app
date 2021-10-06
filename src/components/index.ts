@@ -22,3 +22,6 @@ export const HeadingWithBG = lazy(
 	() => import('./HeadingWithBG/HeadingWithBG'),
 );
 export const MusclePart = lazy(() => import('./MusclePart/MusclePart'));
+export const DifficultyLevel = lazy(
+	() => import('./DifficultyLevel/DifficultyLevel'),
+);

@@ -1,7 +1,13 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { Authentication, Landing, Muscles, Questions } from './pages';
+import {
+	Authentication,
+	Difficulty,
+	Landing,
+	Muscles,
+	Questions,
+} from './pages';
 
 import './style.scss';
 
@@ -13,6 +19,7 @@ function App() {
 					<Route path="/authentication" exact component={Authentication} />
 					<Route path="/questions" exact component={Questions} />
 					<Route path="/muscles" exact component={Muscles} />
+					<Route path="/difficulty" exact component={Difficulty} />
 					<Route path="/" exact component={Landing} />
 				</Switch>
 			</Suspense>

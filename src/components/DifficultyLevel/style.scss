@@ -1,0 +1,24 @@
+.difficultyLevel__container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	cursor: pointer;
+	&:hover .difficultyLevel__image {
+		transform: scale(1.1);
+	}
+	.difficultyLevel__image {
+		transition: all 0.2s ease-in-out;
+		width: 25vw;
+		height: 25vw;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.difficultyLevel__text {
+		font-size: 2rem;
+		text-transform: uppercase;
+		font-weight: 500;
+		margin-top: 32px;
+	}
+}
