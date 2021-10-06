@@ -1,0 +1,22 @@
+@import '../../utils/colors';
+.headingWithBg {
+	margin-top: 0;
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		height: 100px;
+		width: 70%;
+		left: 0;
+		margin-top: -75px;
+		background-color: $color-light-gray;
+		z-index: 0;
+	}
+	h1 {
+		position: relative;
+		z-index: 1;
+		margin: 0;
+		text-transform: uppercase;
+	}
+}

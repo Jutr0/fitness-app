@@ -5,6 +5,10 @@ import enPhoto2 from '../static/martwyciag.jpg';
 import enPhoto3 from '../static/czarnakoszulkacwiczenia.jpg';
 import enPhoto4 from '../static/wymowki.jpg';
 
+import musclePhoto1 from '../static/rece.jpg';
+import musclePhoto2 from '../static/tors.jpg';
+import musclePhoto3 from '../static/nogi.jpg';
+
 export const ENCOURAGE_ELEMENTS: IEncourageElement[] = [
 	{
 		description: 'Pot jest grubym płaczem',
@@ -38,4 +42,24 @@ export const INJURIES: IInjury[] = [
 ];
 export type IInjury = {
 	text: string;
+};
+
+export const MUSCLE_PARTS: IMusclePart[] = [
+	{
+		title: 'Ręce',
+		image: musclePhoto1,
+	},
+	{
+		title: 'Tors',
+		image: musclePhoto2,
+	},
+	{
+		title: 'nOgI',
+		image: musclePhoto3,
+	},
+];
+
+export type IMusclePart = {
+	title: string;
+	image: string;
 };

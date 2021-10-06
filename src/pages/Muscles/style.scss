@@ -1,0 +1,12 @@
+@import '../../utils/colors';
+
+.musclesContainer {
+	display: flex;
+	min-height: 100vh;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
+	header {
+		margin: 64px 0;
+	}
+}
