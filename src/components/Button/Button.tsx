@@ -11,6 +11,7 @@ function Button({
 	size = 'normal',
 	arrow = false,
 	onClick = () => {},
+	className = '',
 }: IButton) {
 	const pickedColor = color === 'primary' ? colors.primary : colors.secondary;
 	let pickedSize = '300px';
@@ -28,7 +29,7 @@ function Button({
 	return (
 		<>
 			<button
-				className="button"
+				className={`button ${className}`}
 				style={{
 					backgroundColor: type === 'filled' ? pickedColor : 'transparent',
 					border: type === 'outlined' ? `2px solid ${pickedColor}` : 'none',
@@ -52,4 +53,5 @@ export type IButton = {
 	size?: 'large' | 'normal' | 'small';
 	arrow?: Boolean;
 	onClick?: (x?: any) => void;
+	className?: string;
 };

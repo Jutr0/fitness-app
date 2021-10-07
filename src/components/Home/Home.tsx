@@ -28,6 +28,7 @@ function Home() {
 					text="Zacznij trening"
 					color="secondary"
 					onClick={handleClick}
+					className="startTrainingBtn"
 				/>
 			</div>
 		</div>

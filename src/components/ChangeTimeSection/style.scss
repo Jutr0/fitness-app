@@ -13,6 +13,7 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	text-align: center;
 	h1 {
 		font-size: 5rem;
 		margin-bottom: 128px;
@@ -23,5 +24,18 @@
 	button {
 		font-size: 2rem;
 		font-weight: 500;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.changeTimeSectionContainer {
+		h1 {
+			font-size: 3rem;
+			span {
+				font-size: 3.5rem;
+			}
+		}
+		.startBtn {
+			width: 80vw !important;
+		}
 	}
 }

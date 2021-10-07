@@ -18,3 +18,56 @@
 .authContainer__register {
 	flex-direction: row-reverse;
 }
+.loginContainer,
+.registerContainer {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 64px;
+	h1 {
+		text-transform: uppercase;
+	}
+	form {
+		margin: 32px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		input {
+			margin-bottom: 32px;
+			padding: 16px 32px;
+			background-color: $color-light-gray;
+			border: none;
+			border-radius: 5px;
+			width: 60%;
+		}
+		button {
+			margin-top: 64px;
+			font-size: 2rem;
+			letter-spacing: 4px;
+			font-weight: 600;
+			padding-top: 8px !important;
+			padding-bottom: 8px !important;
+			width: 100% !important;
+		}
+	}
+	.forgotPass {
+		align-self: flex-end;
+		font-size: 0.9rem;
+	}
+	.downInfo {
+		font-size: 1.1rem;
+		margin-top: 32px;
+		cursor: pointer;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+.registerContainer {
+	h1 {
+		font-size: 3rem;
+	}
+}

@@ -46,3 +46,30 @@
 		}
 	}
 }
+
+@media only screen and (max-width: 1000px) {
+	.encourage__element {
+		flex-direction: column;
+		margin: 72px 0;
+
+		.encourage__image-container {
+			min-width: 0px;
+			width: 70vw;
+			height: 70vw;
+			min-height: 0px;
+			margin: 32px 0;
+		}
+		&:nth-child(2n) {
+			flex-direction: column;
+			.encourage__image-container::before {
+				left: -10%;
+			}
+		}
+		.encourage__description {
+			width: 80vw;
+			text-align: center;
+			font-family: Montserrat;
+			font-size: 1.2rem;
+		}
+	}
+} ;

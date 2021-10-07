@@ -1,6 +1,12 @@
 .backArrow {
 	position: absolute;
-	top: 64px;
+	top: 32px;
 	left: 64px;
 	cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+	.backArrow {
+		left: 16px;
+		top: 16px;
+	}
 }

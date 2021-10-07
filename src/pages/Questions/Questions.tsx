@@ -16,7 +16,7 @@ function Questions() {
 	return (
 		<>
 			<main className="questionsContainer">
-				<HeadingWithBG text="Miałeś jakieś ~kontuzje@ ?" />
+				<HeadingWithBG text="Miałeś jakieś ~kontuzje@?" />
 				<ul>
 					{INJURIES.map((step) => (
 						<QuestionListItem {...step} />
@@ -28,6 +28,7 @@ function Questions() {
 					color="secondary"
 					size="large"
 					onClick={handleClick}
+					className="questionSubmit"
 				/>
 			</main>
 			<BackArrow />

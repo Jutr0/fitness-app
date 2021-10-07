@@ -1,6 +1,6 @@
 @import '../../utils/colors';
 .headingWithBg {
-	margin-top: 0;
+	margin-top: 64px;
 
 	&::after {
 		content: '';
@@ -18,5 +18,66 @@
 		z-index: 1;
 		margin: 0;
 		text-transform: uppercase;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	.headingWithBg {
+		text-align: center;
+		h1 {
+			font-size: 3rem;
+		}
+		span {
+			font-size: 3.5rem;
+		}
+	}
+}
+@media only screen and (max-width: 880px) {
+	.headingWithBg {
+		text-align: center;
+		h1 {
+			font-size: 2rem;
+			line-height: 3rem;
+		}
+		span {
+			font-size: 2.5rem;
+		}
+		&::after {
+			height: 75px;
+			margin-top: -50px;
+		}
+	}
+}
+@media only screen and (max-width: 600px) {
+	.headingWithBg {
+		text-align: center;
+		margin-top: 72px;
+		h1 {
+			line-height: 2.2rem;
+			font-size: 1.7rem;
+		}
+		span {
+			font-size: 1.9rem;
+		}
+		&::after {
+			height: 50px;
+			margin-top: -25px;
+		}
+	}
+}
+@media only screen and (max-width: 450px) {
+	.headingWithBg {
+		text-align: center;
+		h1 {
+			line-height: 1.7rem;
+			font-size: 1.2rem;
+		}
+		span {
+			font-size: 1.4rem;
+		}
+		&::after {
+			height: 50px;
+			margin-top: -25px;
+		}
 	}
 }

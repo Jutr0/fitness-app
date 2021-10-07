@@ -28,3 +28,53 @@
 		font-weight: lighter;
 	}
 }
+
+@media only screen and (max-width: 1300px) {
+	.homeContainer {
+		.homeHeading {
+			font-size: 2.6rem;
+			line-height: 3.3rem;
+
+			span {
+				font-size: 3rem;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 1000px) {
+	.homeContainer {
+		.homeBg {
+			padding: 32px;
+		}
+		.homeHeading {
+			font-size: 1.8rem;
+			line-height: 2.2rem;
+			span {
+				font-size: 2rem;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 600px) {
+	.homeContainer {
+		.homeBg {
+			padding: 16px;
+		}
+		.homeHeading {
+			font-size: 1.4rem;
+			line-height: 1.8rem;
+			span {
+				font-size: 1.6rem;
+			}
+		}
+		.startTrainingBtn {
+			width: 100% !important;
+			// flex-direction: column;
+			img {
+				position: relative;
+				transform: translateX(0);
+				// margin-top: 20px;
+			}
+		}
+	}
+}

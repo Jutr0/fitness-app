@@ -26,6 +26,7 @@ function ChangeTimeSection() {
 				type="outlined"
 				size="large"
 				color="secondary"
+				className="startBtn"
 			/>
 		</section>
 	);

@@ -1,3 +1,5 @@
+@import '../../utils/colors';
+
 .difficultyLevel__container {
 	display: flex;
 	align-items: center;
@@ -20,5 +22,22 @@
 		text-transform: uppercase;
 		font-weight: 500;
 		margin-top: 32px;
+	}
+}
+@media only screen and (max-width: 726px) {
+	.difficultyLevel__container {
+		padding-bottom: 32px;
+		margin-bottom: 32px;
+		border-bottom: 2px solid $color-light-gray;
+		text-align: center;
+		width: 80vw;
+		.difficultyLevel__image {
+			width: 80vw;
+			height: 60vw;
+		}
+		.difficultyLevel__text {
+			margin-top: 16px;
+			font-size: 1.5rem;
+		}
 	}
 }

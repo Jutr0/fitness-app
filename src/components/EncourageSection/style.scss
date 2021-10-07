@@ -12,3 +12,9 @@
 	flex-direction: column;
 	padding-top: 128px;
 }
+
+@media only screen and (max-width: 1000px) {
+	.encourageSection {
+		padding: 16px;
+	}
+} ;

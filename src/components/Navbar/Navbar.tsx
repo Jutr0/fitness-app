@@ -19,6 +19,7 @@ function Navbar() {
 				color="secondary"
 				size="small"
 				onClick={() => handleChangePage('login')}
+				className="loginBtn"
 			/>
 			<Button
 				text="Stwórz Konto"
@@ -26,6 +27,7 @@ function Navbar() {
 				color="secondary"
 				size="small"
 				onClick={() => handleChangePage('register')}
+				className="registerBtn"
 			/>
 		</nav>
 	);

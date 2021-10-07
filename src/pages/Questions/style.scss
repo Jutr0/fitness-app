@@ -10,12 +10,26 @@
 	justify-content: space-around;
 	ul {
 		width: 60%;
+		margin: 64px 0;
 	}
 	.button {
 		font-size: 2rem;
 		padding: 8px !important;
-		position: absolute;
-		right: 64px;
-		bottom: 64px;
+		margin-bottom: 64px;
+		align-self: flex-end;
+		margin-right: 64px;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	.questionsContainer {
+		ul {
+			width: 80%;
+		}
+		.questionSubmit {
+			margin-right: 0;
+			align-self: center;
+			width: 80% !important;
+		}
 	}
 }
