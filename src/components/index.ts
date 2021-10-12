@@ -25,3 +25,7 @@ export const MusclePart = lazy(() => import('./MusclePart/MusclePart'));
 export const DifficultyLevel = lazy(
 	() => import('./DifficultyLevel/DifficultyLevel'),
 );
+export const TrainingShowcaseSection = lazy(
+	() => import('./TrainingShowcaseSection/TrainingShowcaseSection'),
+);
+export const TrainingCard = lazy(() => import('./TrainingCard/TrainingCard'));

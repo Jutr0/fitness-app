@@ -1,12 +1,15 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import InsertExercises from './InsertExercises/InsertExercises';
 
 import {
 	Authentication,
 	Difficulty,
 	Landing,
+	LoadingPage,
 	Muscles,
-	Questions,
+	Training,
+	TrainingShowcase,
 } from './pages';
 
 import './style.scss';
@@ -14,12 +17,14 @@ import './style.scss';
 function App() {
 	return (
 		<Router>
-			<Suspense fallback={<div>Loading...</div>}>
+			<Suspense fallback={<LoadingPage />}>
 				<Switch>
+					<Route path="/insert" exact component={InsertExercises} />
+					<Route path="/trainingShowcase" exact component={TrainingShowcase} />
 					<Route path="/authentication" exact component={Authentication} />
-					<Route path="/questions" exact component={Questions} />
 					<Route path="/muscles" exact component={Muscles} />
 					<Route path="/difficulty" exact component={Difficulty} />
+					<Route path="/training" exact component={Training} />
 					<Route path="/" exact component={Landing} />
 				</Switch>
 			</Suspense>

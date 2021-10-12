@@ -1,0 +1,19 @@
+@import '../../utils/colors';
+
+.trainingShowcaseSection {
+	width: 90%;
+	header {
+		width: fit-content;
+		text-transform: uppercase;
+		border-bottom: 2px solid $color-secondary;
+		padding-right: 50px;
+		font-size: 2rem;
+	}
+	.trainingShowcaseSection__exercises {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 32px 64px;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+}

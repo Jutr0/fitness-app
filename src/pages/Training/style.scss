@@ -1,0 +1,84 @@
+@import '../../utils/colors';
+.training__container {
+	padding-bottom: 64px;
+	.training__background {
+		width: 100%;
+		min-height: 200px;
+		max-height: 500px;
+		height: 40vh;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-blend-mode: multiply;
+		background-color: $color-light-gray;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.training__timer::after,
+		.training__timer::before,
+		.training__timer {
+			max-width: 300px;
+			min-width: 150px;
+			max-height: 300px;
+			min-height: 150px;
+			width: 20vw;
+			height: 20vw;
+			border-radius: 5000px;
+		}
+		.training__timer {
+			background-color: rgba($color-primary, 0.5);
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			span {
+				font-size: 4rem;
+			}
+			&::after {
+				content: '';
+				top: 5px;
+				left: 5px;
+				position: absolute;
+				display: block;
+				border: 20px solid $color-secondary;
+				max-width: 250px;
+				min-width: 100px;
+				max-height: 250px;
+				min-height: 100px;
+				width: calc(20vw - 50px);
+				height: calc(20vw - 50px);
+			}
+		}
+	}
+	.training__description {
+		padding: 32px;
+		header {
+			padding-right: 10px;
+			font-size: 2rem;
+			border-bottom: 4px solid $color-secondary;
+			width: fit-content;
+			margin-bottom: 32px;
+		}
+		div {
+			font-family: 'Montserrat';
+			font-weight: 500;
+			padding-bottom: 32px;
+			border-bottom: 2px solid $color-secondary;
+		}
+	}
+	.training__helper {
+		.helper__text {
+			padding-left: 32px;
+			font-family: 'Montserrat';
+			margin-bottom: 8px;
+		}
+		.helper__button {
+			font-family: 'Montserrat';
+			font-weight: 500;
+			font-size: 1.1rem;
+			img {
+				margin-left: 32px;
+			}
+		}
+	}
+}

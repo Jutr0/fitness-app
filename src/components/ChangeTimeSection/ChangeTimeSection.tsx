@@ -10,7 +10,7 @@ function ChangeTimeSection() {
 	const history = useHistory();
 
 	const handleClick = () => {
-		history.push('/questions');
+		history.push('/muscles');
 	};
 	return (
 		<section

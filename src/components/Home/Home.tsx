@@ -11,7 +11,7 @@ function Home() {
 	const history = useHistory();
 
 	const handleClick = () => {
-		history.push('/questions');
+		history.push('/muscles');
 	};
 	return (
 		<div className="homeContainer">

@@ -9,3 +9,8 @@ export const Questions = lazy(() => import('./Questions/Questions'));
 
 export const Muscles = lazy(() => import('./Muscles/Muscles'));
 export const Difficulty = lazy(() => import('./Difficulty/Difficulty'));
+export const TrainingShowcase = lazy(
+	() => import('./TrainingShowcase/TrainingShowcase'),
+);
+export const Training = lazy(() => import('./Training/Training'));
+export { default as LoadingPage } from './LoadingPage/LoadingPage';
