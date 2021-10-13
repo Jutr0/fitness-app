@@ -1,17 +1,29 @@
 import { IEncourageElement } from '../components/EncourageSection/EncourageElement/EncourageElement';
 
-import enPhoto1 from '../static/male-athlete-sweating (1).jpg';
-import enPhoto2 from '../static/martwyciag.jpg';
-import enPhoto3 from '../static/czarnakoszulkacwiczenia.jpg';
-import enPhoto4 from '../static/wymowki.jpg';
+const enPhoto2 =
+	'https://firebasestorage.googleapis.com/v0/b/fitness-app-ldi.appspot.com/o/martwyciag.jpg?alt=media&token=009048dc-e7bc-41f6-a4e3-0d3747886255';
+const enPhoto3 =
+	'https://firebasestorage.googleapis.com/v0/b/fitness-app-ldi.appspot.com/o/czarnakoszulkacwiczenia.jpg?alt=media&token=204b442d-f551-4aea-b7f7-60b9d33ff96c';
+const enPhoto4 =
+	'https://firebasestorage.googleapis.com/v0/b/fitness-app-ldi.appspot.com/o/wymowki.jpg?alt=media&token=b55f7a4f-6b23-427a-b643-dc59f9573187';
 
-import musclePhoto1 from '../static/rece.jpg';
-import musclePhoto2 from '../static/tors.jpg';
-import musclePhoto3 from '../static/nogi.jpg';
+const musclePhoto1 =
+	'https://firebasestorage.googleapis.com/v0/b/fitness-app-ldi.appspot.com/o/rece.jpg?alt=media&token=b13fd608-f15d-4c81-99d4-82a414417deb';
+const musclePhoto2 =
+	'https://firebasestorage.googleapis.com/v0/b/fitness-app-ldi.appspot.com/o/tors.jpg?alt=media&token=52fb6982-4e12-4c40-93fb-7ebfb93ab9e2';
+const musclePhoto3 =
+	'https://firebasestorage.googleapis.com/v0/b/fitness-app-ldi.appspot.com/o/nogi.jpg?alt=media&token=d47a917b-5231-4da5-90a0-86a87b246919';
 
-import difficultyPhoto1 from '../static/noob.jpg';
-import difficultyPhoto2 from '../static/bambi.jpg';
-import difficultyPhoto3 from '../static/pro.jpg';
+const difficultyPhoto1 =
+	'https://firebasestorage.googleapis.com/v0/b/fitness-app-ldi.appspot.com/o/noob.jpg?alt=media&token=5a317e83-642e-4a9f-b594-9a7a76ada8c0';
+const difficultyPhoto2 =
+	'https://firebasestorage.googleapis.com/v0/b/fitness-app-ldi.appspot.com/o/bambi.jpg?alt=media&token=a61d3e01-6fa6-458f-898c-6cfa87e801fb';
+
+const difficultyPhoto3 =
+	'https://firebasestorage.googleapis.com/v0/b/fitness-app-ldi.appspot.com/o/pro.jpg?alt=media&token=03fa5538-8645-4e3b-992b-a18b472981fc';
+
+const enPhoto1 =
+	'https://firebasestorage.googleapis.com/v0/b/fitness-app-ldi.appspot.com/o/male-athlete-sweating%20(1).jpg?alt=media&token=1e23a018-cb81-4404-a4d4-b70473ade68a';
 
 export const ENCOURAGE_ELEMENTS: IEncourageElement[] = [
 	{
@@ -72,18 +84,22 @@ export const DIFFICULTY_LEVELS: IDifficultyLevel[] = [
 	{
 		text: 'dopiero zaczynam',
 		image: difficultyPhoto1,
+		type: 'beginner',
 	},
 	{
 		text: 'coś ćwiczyłem',
 		image: difficultyPhoto2,
+		type: 'intermediate',
 	},
 	{
 		text: 'regularnie trenuję',
 		image: difficultyPhoto3,
+		type: 'pro',
 	},
 ];
 
 export type IDifficultyLevel = {
 	text: string;
 	image: string;
+	type: 'beginner' | 'intermediate' | 'pro';
 };

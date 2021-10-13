@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { BackArrow, Button } from '../../components';
-import bgTraining from '../../static/bgTraining.jpg';
 
 import './style.scss';
+
+const bgTraining =
+	'https://firebasestorage.googleapis.com/v0/b/fitness-app-ldi.appspot.com/o/bgTraining.jpg?alt=media&token=5657cb44-8355-41a9-9131-1a8854b9bdc4';
 
 function Training() {
 	const [isStarted, setIsStarted] = useState(false);

@@ -3,13 +3,14 @@
 .authContainer {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	width: 100%;
 	min-height: 100vh;
 	background-color: $color-primary;
 }
 .bgPhoto {
-	height: 100vh;
+	min-height: 100vh;
+	height: 100%;
 	width: 50%;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -27,6 +28,7 @@
 	padding: 64px;
 	h1 {
 		text-transform: uppercase;
+		margin: 32px 0;
 	}
 	form {
 		margin: 32px;
@@ -69,5 +71,46 @@
 .registerContainer {
 	h1 {
 		font-size: 3rem;
+	}
+}
+
+@media only screen and (max-width: 1170px) {
+	.loginContainer,
+	.registerContainer {
+		h1 {
+			font-size: 2.5rem;
+			margin: 16px 0;
+		}
+	}
+}
+@media only screen and (max-width: 1010px) {
+	.bgPhoto {
+		display: none;
+	}
+	.loginContainer,
+	.registerContainer {
+		width: 100%;
+		padding: 32px;
+		form {
+			input {
+				width: 80%;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 512px) {
+	.loginContainer,
+	.registerContainer {
+		h1 {
+			font-size: 1.7rem;
+			margin: 16px 0;
+			line-height: 1.7rem;
+		}
+		form {
+			input {
+				width: 90%;
+			}
+		}
 	}
 }
