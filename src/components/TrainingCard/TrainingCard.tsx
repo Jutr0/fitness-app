@@ -16,6 +16,7 @@ function TrainingCard({ name, thumbnail }: IProps) {
 				className="trainingCard__thumbnail"
 				style={{
 					backgroundImage:
+						thumbnail ||
 						'url("https://firebasestorage.googleapis.com/v0/b/fitness-app-ldi.appspot.com/o/rece.jpg?alt=media&token=b13fd608-f15d-4c81-99d4-82a414417deb")',
 				}}
 			/>

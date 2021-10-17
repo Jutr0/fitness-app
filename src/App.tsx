@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { getExercises } from './firebase';
 import InsertExercises from './InsertExercises/InsertExercises';
 
 import {
@@ -11,6 +12,7 @@ import {
 	Training,
 	TrainingShowcase,
 } from './pages';
+import ShowExercises from './ShowExercises/ShowExercises';
 
 import './style.scss';
 
@@ -25,6 +27,8 @@ function App() {
 					<Route path="/muscles" exact component={Muscles} />
 					<Route path="/difficulty" exact component={Difficulty} />
 					<Route path="/training" exact component={Training} />
+					<Route path="/showExercises" exact component={ShowExercises} />
+
 					<Route path="/" exact component={Landing} />
 				</Switch>
 			</Suspense>

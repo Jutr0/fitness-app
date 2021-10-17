@@ -64,20 +64,24 @@ export const MUSCLE_PARTS: IMusclePart[] = [
 	{
 		title: 'Ręce',
 		image: musclePhoto1,
+		muscle: 'arms',
 	},
 	{
 		title: 'Tors',
 		image: musclePhoto2,
+		muscle: 'torso',
 	},
 	{
 		title: 'nOgI',
 		image: musclePhoto3,
+		muscle: 'legs',
 	},
 ];
 
 export type IMusclePart = {
 	title: string;
 	image: string;
+	muscle: 'torso' | 'legs' | 'arms';
 };
 
 export const DIFFICULTY_LEVELS: IDifficultyLevel[] = [
@@ -103,3 +107,5 @@ export type IDifficultyLevel = {
 	image: string;
 	type: 'beginner' | 'intermediate' | 'pro';
 };
+
+export const sessionStorage = window.sessionStorage;

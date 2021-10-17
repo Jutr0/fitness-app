@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router';
 import { useAppDispatch } from '../../redux/hooks/hooks';
 import { updateDifficulty } from '../../redux/slices/difficultySlice';
@@ -17,6 +17,9 @@ function DifficultyLevel({ text, image, type }: IProps) {
 		dispatch(updateDifficulty(type));
 		history.push('/trainingShowcase');
 	};
+	useEffect(() => {
+		sessionStorage.setItem('change', 'true');
+	}, []);
 
 	return (
 		<div className="difficultyLevel__container" onClick={handleClick}>

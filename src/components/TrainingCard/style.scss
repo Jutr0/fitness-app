@@ -1,26 +1,29 @@
+@import '../../utils/colors';
 .trainingCard__container {
 	display: flex;
 	max-width: 300px;
-	min-width: 200px;
-	max-height: 364px;
+	min-width: 250px;
 	min-height: 264px;
 	width: 30vw;
-	height: calc(30vw + 64px);
 	flex-direction: column;
 	text-align: center;
 	margin: 16px;
+	margin-bottom: 32px;
+	border-bottom: 1px solid $color-light-gray;
 	.trainingCard__thumbnail {
 		max-width: 300px;
-		min-width: 200px;
+		min-width: 250px;
 		max-height: 300px;
-		min-height: 200px;
+		min-height: 250px;
 		width: 30vw;
 		height: 30vw;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
+		margin: 8px 0;
 	}
 	.trainingCard__name {
+		padding: 8px 0;
 		font-size: 1.3rem;
 		text-transform: uppercase;
 	}

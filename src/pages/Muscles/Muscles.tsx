@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router';
 import { BackArrow, HeadingWithBG, MusclePart } from '../../components';
 import { useAppDispatch } from '../../redux/hooks/hooks';
 import { IMuscle, updateMusclePart } from '../../redux/slices/musclePartSlice';
-import { MUSCLE_PARTS } from '../../utils/constants';
+import { MUSCLE_PARTS, sessionStorage } from '../../utils/constants';
 
 import './style.scss';
 
@@ -16,6 +16,10 @@ function Muscles() {
 		history.push('./difficulty');
 	};
 
+	useEffect(() => {
+		sessionStorage.setItem('change', 'true');
+	}, []);
+
 	return (
 		<>
 			<main className="musclesContainer">
@@ -23,7 +27,7 @@ function Muscles() {
 				{MUSCLE_PARTS.map((step) => (
 					<MusclePart
 						{...step}
-						onClick={() => handlePickMuscle(step.title as IMuscle)}
+						onClick={() => handlePickMuscle(step.muscle as IMuscle)}
 					/>
 				))}
 			</main>
