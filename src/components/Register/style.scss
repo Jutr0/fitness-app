@@ -1,0 +1,18 @@
+form {
+	.additionalInfo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.additionalInfo__container {
+			display: flex;
+			flex-direction: column;
+			width: 40%;
+			max-width: 150px;
+			margin: 0 8px;
+			input {
+				width: 100%;
+				padding: 8px;
+			}
+		}
+	}
+}

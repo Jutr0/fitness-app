@@ -40,9 +40,11 @@ function Training() {
 			sessionStorage.clear();
 			sessionStorage.setItem('time', time!);
 			sessionStorage.setItem('endTraining', 'true');
+			return;
 		}
 		if (exercise === null || !isStarted) {
 			const tempExercise = getExercise();
+			if (!tempExercise) history.replace('/');
 			setExercise(tempExercise);
 			setTimer(
 				process.env.NODE_ENV === 'production' ? tempExercise?.time || 60 : 0,

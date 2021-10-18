@@ -83,6 +83,10 @@ function TrainingShowcase() {
 					exercise: IExercise[];
 					stretching: IExercise[];
 				};
+				if (!tempExercises) {
+					history.replace('/');
+					return;
+				}
 				dispatch(updateExercise(tempExercises.exercise));
 				dispatch(updateWarmUp(tempExercises.warmUp));
 				dispatch(updateStretching(tempExercises.stretching));

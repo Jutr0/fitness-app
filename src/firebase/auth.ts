@@ -4,13 +4,18 @@ import {
 } from 'firebase/auth';
 
 import { auth } from './';
+import { addUser } from './firestore';
 
-export const registerUser = (email: string, password: string) => {
-	createUserWithEmailAndPassword(auth, email, password)
-		.then((user) => {
-			console.log('created account ', user.user.email);
-		})
-		.catch((err) => console.error(err));
+export const registerUser = async (
+	email: string,
+	password: string,
+	weight: number,
+	height: number,
+) => {
+	const user = await createUserWithEmailAndPassword(auth, email, password);
+
+	addUser(user.user, weight, height);
+
 	return Promise.resolve();
 };
 
@@ -18,7 +23,7 @@ export const loginUser = (email: string, password: string) => {
 	return signInWithEmailAndPassword(auth, email, password);
 };
 
-export const signOutUser = () => {
+export const signOutUser = async () => {
 	auth.signOut();
 };
 

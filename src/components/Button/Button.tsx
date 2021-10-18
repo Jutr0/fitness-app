@@ -12,6 +12,7 @@ function Button({
 	arrow = false,
 	onClick = () => {},
 	className = '',
+	disabled = false,
 }: IButton) {
 	const pickedColor = color === 'primary' ? colors.primary : colors.secondary;
 	let pickedSize = '300px';
@@ -29,6 +30,7 @@ function Button({
 	return (
 		<>
 			<button
+				disabled={disabled}
 				className={`button ${className}`}
 				style={{
 					backgroundColor: type === 'filled' ? pickedColor : 'transparent',
@@ -54,4 +56,5 @@ export type IButton = {
 	arrow?: Boolean;
 	onClick?: (x?: any) => void;
 	className?: string;
+	disabled?: boolean;
 };

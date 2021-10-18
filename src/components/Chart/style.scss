@@ -1,0 +1,15 @@
+.chart {
+	padding: 16px;
+	height: 40vw;
+	width: 40vw;
+	border-radius: 2px;
+	box-shadow: 1px 1px 10px 0px #00000090;
+	margin-top: 32px;
+}
+
+@media only screen and (max-width: 900px) {
+	.chart {
+		padding: 8px;
+		width: 90vw;
+	}
+}

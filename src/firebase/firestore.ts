@@ -1,14 +1,21 @@
 import {
+	addDoc,
 	collection,
 	doc,
 	FieldPath,
 	getDoc,
 	getDocs,
+	limit,
+	orderBy,
 	query,
+	setDoc,
+	updateDoc,
 	where,
 } from 'firebase/firestore';
 import { IExercise, IExerciseType } from '../interfaces/IExercise';
 import { db } from '.';
+import { User } from '@firebase/auth';
+import { currentUser } from './auth';
 
 export const getExercise = async (id: string) => {
 	const exercise: IExercise | null = await getDoc(doc(db, 'exercise', id))
@@ -75,4 +82,59 @@ export const getExercises = async (
 		// console.log(tempExercises.length);
 		return tempExercises;
 	}
+};
+
+export const addUser = async (user: User, weight: number, height: number) => {
+	await setDoc(doc(db, 'users', user.uid), {
+		email: user.email,
+		height,
+	});
+	await addWeight(user.uid, weight);
+};
+
+export const getUser = async (userId: string) => {
+	const tempUser = await getDoc(doc(db, 'users', userId)).then((res) =>
+		res.data(),
+	);
+	return tempUser;
+};
+
+export const addWeight = (userId: string, weight: number) => {
+	const date = new Date().toLocaleDateString();
+
+	const done = addDoc(collection(db, 'users', userId, 'weights'), {
+		createdAt: Date.now(),
+		date,
+		value: weight,
+	})
+		.then((res) => true)
+		.catch((err) => false);
+	return done;
+};
+
+export const getWeights = async (userId: string) => {
+	const q = query(
+		collection(db, 'users', userId, 'weights'),
+		orderBy('createdAt', 'desc'),
+		limit(7),
+	);
+	const weights: IWeight[] = [];
+	await getDocs(q).then((res) => {
+		res.docs.forEach((doc, index) => {
+			weights[6 - index] = doc.data() as IWeight;
+		});
+	});
+
+	return weights;
+};
+
+export const getHeight = async (userId: string): Promise<number> => {
+	const user = await (await getDoc(doc(db, 'users', userId))).data();
+	return user?.height;
+};
+
+export type IWeight = {
+	value: number;
+	createdAt?: number;
+	date: string;
 };

@@ -29,3 +29,4 @@ export const TrainingShowcaseSection = lazy(
 	() => import('./TrainingShowcaseSection/TrainingShowcaseSection'),
 );
 export const TrainingCard = lazy(() => import('./TrainingCard/TrainingCard'));
+export { default as Chart } from './Chart/Chart';

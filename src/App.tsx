@@ -4,6 +4,7 @@ import { auth } from './firebase';
 import InsertExercises from './InsertExercises/InsertExercises';
 
 import {
+	AccountPage,
 	Authentication,
 	Difficulty,
 	Landing,
@@ -40,6 +41,7 @@ function App() {
 					<Route path="/training" exact component={Training} />
 					<Route path="/showExercises" exact component={ShowExercises} />
 					<Route path="/summary" exact component={Summary} />
+					<Route path="/account" exact component={AccountPage} />
 
 					<Route path="/" exact component={Landing} />
 				</Switch>

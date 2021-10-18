@@ -1,0 +1,38 @@
+@import '../../utils/colors';
+
+.accountPageContainer {
+	width: 100%;
+	min-height: 100vh;
+	.background {
+		height: 20vh;
+		width: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-blend-mode: multiply;
+		background-color: $color-gray;
+		.logoutBtnContainer {
+			position: absolute;
+			top: 16px;
+			right: 16px;
+			.button {
+				width: 150px !important;
+			}
+		}
+	}
+	.chartsContainer {
+		width: 100%;
+		padding: 64px;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+	}
+}
+@media only screen and (max-width: 900px) {
+	.accountPageContainer {
+		.chartsContainer {
+			padding: 16px;
+		}
+	}
+}

@@ -8,11 +8,15 @@ import {
 	validateRepPassword,
 } from '../../pages/Authentication/functions';
 
+import './style.scss';
+
 function Register() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [repPassword, setRepPassword] = useState('');
 	const [errorMessage, setErrorMessage] = useState('');
+	const [weight, setWeight] = useState<number>(0);
+	const [height, setHeight] = useState<number>(0);
 
 	const history = useHistory();
 
@@ -22,9 +26,11 @@ function Register() {
 		if (validateEmail(email)) {
 			if (validatePassword(password)) {
 				if (validateRepPassword(password, repPassword)) {
-					registerUser(email, password).then(() => {
-						history.replace('/');
-					});
+					if (height !== 0 && weight !== 0) {
+						registerUser(email, password, weight, height).then(() => {
+							history.replace('/');
+						});
+					} else setErrorMessage('Podaj swój wzrost i wagę!');
 				} else setErrorMessage('Hasła nie są takie same!');
 			} else setErrorMessage('Za krótkie hasło!');
 		} else setErrorMessage('Nieprawidłowy email!');
@@ -43,6 +49,16 @@ function Register() {
 	};
 	const handleRepPassword = (value: string) => {
 		setRepPassword(value);
+	};
+	const handleWeight = (value: string) => {
+		if (+value! > 0) {
+			setWeight(Math.floor(+value));
+		} else setWeight(0);
+	};
+	const handleHeight = (value: string) => {
+		if (+value! > 0) {
+			setHeight(Math.floor(+value));
+		} else setHeight(0);
 	};
 
 	return (
@@ -69,6 +85,26 @@ function Register() {
 					placeholder="Powtórz hasło"
 					onChange={(e) => handleRepPassword(e.target.value)}
 				/>
+				<div className="additionalInfo">
+					<div className="additionalInfo__container">
+						<label htmlFor="weight">Waga (kg)</label>
+						<input
+							value={weight ? weight : ''}
+							onChange={(e) => handleWeight(e.target.value)}
+							type="number"
+							id="weight"
+						/>
+					</div>
+					<div className="additionalInfo__container">
+						<label htmlFor="height">Wzrost (cm)</label>
+						<input
+							value={height ? height : ''}
+							onChange={(e) => handleHeight(e.target.value)}
+							type="number"
+							id="height"
+						/>
+					</div>
+				</div>
 				<div className="error">{errorMessage}</div>
 				<Button
 					text="UTWÓRZ"
