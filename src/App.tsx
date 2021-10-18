@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { getExercises } from './firebase';
 import InsertExercises from './InsertExercises/InsertExercises';
 
 import {

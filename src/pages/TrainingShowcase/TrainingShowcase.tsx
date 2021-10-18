@@ -35,6 +35,10 @@ function TrainingShowcase() {
 	};
 
 	useEffect(() => {
+		if (sessionStorage.getItem('endTraining') === 'true') {
+			history.replace('/');
+			return;
+		}
 		const tempFunction = async () => {
 			if (sessionStorage.getItem('change') === 'true') {
 				const tempWarmUp: IExercise[] = await getExercises(
@@ -83,6 +87,11 @@ function TrainingShowcase() {
 				dispatch(updateWarmUp(tempExercises.warmUp));
 				dispatch(updateStretching(tempExercises.stretching));
 				setLoading(false);
+			}
+			if (!sessionStorage.getItem('type')) {
+				sessionStorage.setItem('type', 'rozgrzewka');
+				sessionStorage.setItem('number', '0');
+				sessionStorage.setItem('isBreak', 'false');
 			}
 			// console.log(sessionStorage);
 		};

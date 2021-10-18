@@ -7,6 +7,7 @@ import {
 } from '../../components';
 
 function Landing() {
+	sessionStorage.clear();
 	return (
 		<>
 			<Navbar />

@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BackArrow, DifficultyLevel, HeadingWithBG } from '../../components';
 import { DIFFICULTY_LEVELS } from '../../utils/constants';
 
 import './style.scss';
 
 function Difficulty() {
+	useEffect(() => {
+		sessionStorage.clear();
+		sessionStorage.setItem('change', 'true');
+	}, []);
+
 	return (
 		<>
 			<main className="difficultyContainer">

@@ -17,6 +17,7 @@ function Muscles() {
 	};
 
 	useEffect(() => {
+		sessionStorage.clear();
 		sessionStorage.setItem('change', 'true');
 	}, []);
 
