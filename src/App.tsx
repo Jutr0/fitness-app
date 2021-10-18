@@ -9,6 +9,7 @@ import {
 	Landing,
 	LoadingPage,
 	Muscles,
+	Summary,
 	Training,
 	TrainingShowcase,
 } from './pages';
@@ -38,6 +39,7 @@ function App() {
 					<Route path="/difficulty" exact component={Difficulty} />
 					<Route path="/training" exact component={Training} />
 					<Route path="/showExercises" exact component={ShowExercises} />
+					<Route path="/summary" exact component={Summary} />
 
 					<Route path="/" exact component={Landing} />
 				</Switch>

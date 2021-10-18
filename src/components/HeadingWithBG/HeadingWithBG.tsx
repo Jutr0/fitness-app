@@ -3,14 +3,19 @@ import React from 'react';
 import './style.scss';
 
 function HeadingWithBG({ text }: IProps) {
-	const firstPart = text.slice(0, text.indexOf('~'));
-	const secondPart = text.slice(text.indexOf('~') + 1, text.indexOf('@'));
-	const thirdPart = text.slice(text.indexOf('@') + 1);
+	let firstPart;
+	let secondPart;
+	let thirdPart;
+	if (text.includes('~')) {
+		firstPart = text.slice(0, text.indexOf('~'));
+		secondPart = text.slice(text.indexOf('~') + 1, text.indexOf('@'));
+		thirdPart = text.slice(text.indexOf('@') + 1);
+	}
 
 	return (
 		<header className="headingWithBg">
 			<h1>
-				{firstPart} <span>{secondPart}</span>
+				{firstPart || text} <span>{secondPart}</span>
 				{thirdPart}
 			</h1>
 		</header>

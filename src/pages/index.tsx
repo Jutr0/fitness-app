@@ -14,3 +14,4 @@ export const TrainingShowcase = lazy(
 );
 export const Training = lazy(() => import('./Training/Training'));
 export { default as LoadingPage } from './LoadingPage/LoadingPage';
+export { default as Summary } from './Summary/Summary';

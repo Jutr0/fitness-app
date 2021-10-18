@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { BackArrow, Button } from '../../components';
 import { IExercise } from '../../interfaces/IExercise';
 import { useAppSelector } from '../../redux/hooks/hooks';
+import { sessionStorage } from '../../utils/constants';
 import { getExercise, nextExercise } from './functions';
 
 import './style.scss';
@@ -23,6 +24,9 @@ function Training() {
 	} | null>(null);
 	const handleStart = () => {
 		setIsStarted(true);
+		if (!sessionStorage.getItem('time')) {
+			sessionStorage.setItem('time', Date.now().toString());
+		}
 		if (timer === -1) {
 			nextExercise();
 			setIsStarted(false);
@@ -32,7 +36,9 @@ function Training() {
 	useEffect(() => {
 		if (sessionStorage.getItem('endTraining') === 'true') {
 			history.replace('/summary');
+			const time = sessionStorage.getItem('time');
 			sessionStorage.clear();
+			sessionStorage.setItem('time', time!);
 			sessionStorage.setItem('endTraining', 'true');
 		}
 		if (exercise === null || !isStarted) {

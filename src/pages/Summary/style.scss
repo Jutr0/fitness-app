@@ -1,0 +1,147 @@
+@import '../../utils/colors';
+
+.summaryContainer {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	min-height: 100vh;
+	flex-direction: column;
+
+	.summaryDescription {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: space-evenly;
+		width: 100%;
+		padding: 64px;
+
+		h1 {
+			font-size: 2.2rem;
+			text-transform: uppercase;
+			span {
+				font-size: 2.5rem;
+			}
+		}
+		.summaryTime {
+			font-size: 3rem;
+			text-transform: uppercase;
+			font-weight: bold;
+			border-bottom: 1px solid $color-secondary;
+			padding: 0 8px;
+			margin: 0 0 32px;
+		}
+		.summaryAccount {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			span {
+				margin: 32px 0 0;
+				font-size: 1.2rem;
+				font-family: 'Montserrat';
+			}
+			.button {
+				margin: 32px 0;
+				font-size: 1.5rem;
+			}
+		}
+		.summaryInput {
+			form {
+				margin: 32px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+				width: 100%;
+				input {
+					margin-bottom: 32px;
+					padding: 16px 32px;
+					background-color: $color-light-gray;
+					border: none;
+					border-radius: 5px;
+					width: 50%;
+					height: 64px;
+				}
+				label {
+					margin-right: 8px;
+					line-height: 64px;
+					font-size: 1.5rem;
+				}
+				button {
+					margin-top: 64px;
+					font-size: 2rem;
+					letter-spacing: 4px;
+					font-weight: 600;
+					padding-top: 8px !important;
+					padding-bottom: 8px !important;
+					width: 100% !important;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	.summaryContainer {
+		.summaryDescription {
+			h1 {
+				font-size: 2rem;
+				span {
+					font-size: 2.3rem;
+				}
+			}
+			.summaryTime {
+				font-size: 2.5rem;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 880px) {
+	.summaryContainer {
+		header {
+			margin-top: 32px;
+		}
+		.summaryDescription {
+			padding: 32px;
+			h1 {
+				font-size: 1.6rem;
+				line-height: 1.8rem;
+				span {
+					font-size: 1.8rem;
+				}
+			}
+			.summaryTime {
+				font-size: 2.3rem;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 600px) {
+	.summaryContainer {
+		.summaryDescription {
+			h1 {
+				line-height: 1.6rem;
+				font-size: 1.4rem;
+				span {
+					font-size: 1.6rem;
+				}
+			}
+			.summaryTime {
+				font-size: 2rem;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 450px) {
+	.summaryContainer {
+		.summaryDescription {
+			h1 {
+				line-height: 1.5rem;
+				font-size: 1.3rem;
+				span {
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+}
