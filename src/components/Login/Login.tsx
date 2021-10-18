@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import { Button } from '..';
+import { loginUser } from '../../firebase/auth';
+import { useAppDispatch } from '../../redux/hooks/hooks';
+import { updateUser } from '../../redux/slices/userSlice';
 
 import './style.scss';
 
 function Login() {
 	const history = useHistory();
 
+	const dispatch = useAppDispatch();
+
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+
 	const handleLogin = (e: any) => {
 		e.preventDefault();
+		if (email && password) {
+			loginUser(email, password)
+				.then((user) => {
+					dispatch(updateUser(user.user));
+					history.replace('/');
+				})
+				.catch((error) => {
+					console.error(error);
+				});
+		}
 	};
 
 	const goToRegister = () => {
@@ -18,8 +36,18 @@ function Login() {
 		<div className="loginContainer">
 			<h1>Zaloguj się</h1>
 			<form>
-				<input type="text" placeholder="Email" />
-				<input type="password" placeholder="Hasło" />
+				<input
+					value={email}
+					type="email"
+					placeholder="Email"
+					onChange={(e) => setEmail(e.target.value)}
+				/>
+				<input
+					value={password}
+					type="password"
+					placeholder="Hasło"
+					onChange={(e) => setPassword(e.target.value)}
+				/>
 				<Button
 					text="ZALOGUJ"
 					type="filled"

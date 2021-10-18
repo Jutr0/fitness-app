@@ -109,3 +109,5 @@ export type IDifficultyLevel = {
 };
 
 export const sessionStorage = window.sessionStorage;
+
+export { default as accountIcon } from '../static/AccountIcon.svg';

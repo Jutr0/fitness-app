@@ -1,3 +1,5 @@
+@import '../../utils/colors';
+
 .navbar {
 	position: absolute;
 	z-index: 2;
@@ -10,7 +12,19 @@
 		margin-left: 32px;
 		font-weight: bold;
 	}
-	.registerBtn {
+	.navbar-account {
+		width: 64px;
+		height: 64px;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		color: $color-secondary;
+		margin: -32px;
+		cursor: pointer;
+		transition: all 0.1s ease-in-out;
+		&:hover {
+			transform: scale(1.05);
+		}
 	}
 }
 
@@ -19,6 +33,17 @@
 		padding: 32px 16px;
 		.loginBtn {
 			margin: 0;
+		}
+		.navbar-account {
+			margin: -16px 0;
+		}
+	}
+}
+@media only screen and (min-width: 1450px) {
+	.navbar {
+		.navbar-account {
+			width: 72px;
+			height: 72px;
 		}
 	}
 }

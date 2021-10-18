@@ -8,6 +8,7 @@ import {
 
 function Landing() {
 	sessionStorage.clear();
+
 	return (
 		<>
 			<Navbar />

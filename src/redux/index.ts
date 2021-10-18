@@ -4,6 +4,7 @@ import difficultyReducer from './slices/difficultySlice';
 import exerciseSlice from './slices/exerciseSlice';
 import muscleReducer from './slices/musclePartSlice';
 import stretchingSlice from './slices/stretchingSlice';
+import userSlice from './slices/userSlice';
 import warmUpSlice from './slices/warmUpSlice';
 
 export const store = configureStore({
@@ -13,6 +14,7 @@ export const store = configureStore({
 		warmUp: warmUpSlice,
 		exercise: exerciseSlice,
 		stretching: stretchingSlice,
+		user: userSlice,
 	},
 });
 

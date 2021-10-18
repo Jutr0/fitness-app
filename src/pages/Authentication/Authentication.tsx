@@ -1,7 +1,8 @@
-import React from 'react';
-import { useLocation } from 'react-router';
+import React, { useEffect } from 'react';
+import { useHistory, useLocation } from 'react-router';
 
 import { BackArrow, Login, Register } from '../../components';
+import { useAppSelector } from '../../redux/hooks/hooks';
 
 import './style.scss';
 
@@ -10,6 +11,16 @@ const bgPhoto =
 
 function Authentication() {
 	const { state } = useLocation<{ action: 'login' | 'register' }>();
+
+	const user = useAppSelector((state) => state.user.value);
+
+	const history = useHistory();
+
+	useEffect(() => {
+		if (user) {
+			history.replace('/');
+		}
+	});
 
 	return (
 		<>
