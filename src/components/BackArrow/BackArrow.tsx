@@ -5,10 +5,15 @@ import BackArr from '../../static/Back_Arr.svg';
 
 import './style.scss';
 
-function BackArrow() {
+type IProps = {
+	onClick: () => void;
+};
+
+function BackArrow({ onClick }: IProps) {
 	const history = useHistory();
 
 	const handleClick = () => {
+		onClick();
 		history.goBack();
 	};
 	return (

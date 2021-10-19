@@ -10,10 +10,10 @@ function EncourageSection() {
 	return (
 		<section
 			className="encourageSection"
-			style={{ backgroundImage: `url('${bgLine}')` }}
+			style={{ backgroundImage: `url('${bgLine}')`, overflowX: 'hidden' }}
 		>
-			{ENCOURAGE_ELEMENTS.map((step) => (
-				<EncourageElement {...step} />
+			{ENCOURAGE_ELEMENTS.map((step, index) => (
+				<EncourageElement {...step} direction={index % 2} />
 			))}
 		</section>
 	);

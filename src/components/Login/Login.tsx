@@ -21,7 +21,7 @@ function Login() {
 			loginUser(email, password)
 				.then((user) => {
 					dispatch(updateUser(user.user));
-					history.replace('/');
+					history.goBack();
 				})
 				.catch((error) => {
 					console.error(error);

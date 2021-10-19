@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router';
+import { motion } from 'framer-motion';
 
-import { Button, Chart } from '../../components';
+import { BackArrow, Button, Chart } from '../../components';
 import { signOutUser } from '../../firebase/auth';
 import { getHeight, getWeights } from '../../firebase/firestore';
 import { useAppSelector } from '../../redux/hooks/hooks';
+import { pageVariants, pageTransition } from '../../utils/constants';
 
 import './style.scss';
 
@@ -15,10 +17,14 @@ function AccountPage() {
 	const history = useHistory();
 
 	const user = useAppSelector((state) => state.user.value);
-
 	const [weights, setWeights] = useState<MyWeight[]>([]);
 	const height = useRef<number>();
 	const [BMI, setBMI] = useState<IBMI[]>([]);
+
+	const [direction, setDirection] = useState(1);
+	const handleBack = () => {
+		setDirection(0);
+	};
 
 	useEffect(() => {
 		if (user) {
@@ -53,29 +59,39 @@ function AccountPage() {
 	}, [user]);
 
 	return (
-		<main className="accountPageContainer">
-			<div
-				className="background"
-				style={{
-					backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/fitness-app-ldi.appspot.com/o/ciezarytlo.jpg?alt=media&token=41172a89-267c-47b9-afc4-35327717ecd6')`,
-				}}
+		<>
+			<motion.main
+				className="accountPageContainer"
+				variants={pageVariants(direction)}
+				initial="initial"
+				animate="in"
+				exit="out"
+				transition={pageTransition}
 			>
-				<div className="logoutBtnContainer">
-					<Button
-						text="Wyloguj"
-						type="outlined"
-						onClick={() => {
-							signOutUser().then(() => history.push('/'));
-						}}
-						color="secondary"
-					/>
+				<div
+					className="background"
+					style={{
+						backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/fitness-app-ldi.appspot.com/o/ciezarytlo.jpg?alt=media&token=41172a89-267c-47b9-afc4-35327717ecd6')`,
+					}}
+				>
+					<div className="logoutBtnContainer">
+						<Button
+							text="Wyloguj"
+							type="outlined"
+							onClick={() => {
+								signOutUser().then(() => history.push('/'));
+							}}
+							color="secondary"
+						/>
+					</div>
 				</div>
-			</div>
-			<div className="chartsContainer">
-				<Chart unit=" kg" dataKey="Waga" data={weights} />
-				<Chart unit="" dataKey="BMI" data={BMI} />
-			</div>
-		</main>
+				<div className="chartsContainer">
+					<Chart unit=" kg" dataKey="Waga" data={weights} />
+					<Chart unit="" dataKey="BMI" data={BMI} />
+				</div>
+				<BackArrow onClick={handleBack} />
+			</motion.main>
+		</>
 	);
 }
 

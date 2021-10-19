@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 
 import { LoadingPage } from '..';
+import { motion } from 'framer-motion';
 import {
 	BackArrow,
 	Button,
@@ -14,7 +15,11 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks/hooks';
 import { updateExercise } from '../../redux/slices/exerciseSlice';
 import { updateStretching } from '../../redux/slices/stretchingSlice';
 import { updateWarmUp } from '../../redux/slices/warmUpSlice';
-import { sessionStorage } from '../../utils/constants';
+import {
+	pageTransition,
+	pageVariants,
+	sessionStorage,
+} from '../../utils/constants';
 
 import './style.scss';
 
@@ -28,6 +33,10 @@ function TrainingShowcase() {
 	const stretching = useAppSelector((state) => state.stretching.values);
 
 	const [loading, setLoading] = useState(true);
+	const [direction, setDirection] = useState(1);
+	const handleBack = () => {
+		setDirection(0);
+	};
 
 	const history = useHistory();
 	const handleClick = () => {
@@ -109,7 +118,14 @@ function TrainingShowcase() {
 				<LoadingPage />
 			) : (
 				<>
-					<main className="trainingShowcaseContainer">
+					<motion.main
+						className="trainingShowcaseContainer"
+						variants={pageVariants(direction)}
+						initial="initial"
+						animate="in"
+						exit="out"
+						transition={pageTransition}
+					>
 						<HeadingWithBG text="Dzisiejszy ~trening@" />
 						<Button
 							text="ROZPOCZNIJ"
@@ -129,9 +145,8 @@ function TrainingShowcase() {
 							color="secondary"
 							onClick={handleClick}
 						/>
-					</main>
-
-					<BackArrow />
+						<BackArrow onClick={handleBack} />
+					</motion.main>
 				</>
 			)}
 		</>

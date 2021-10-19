@@ -111,3 +111,21 @@ export type IDifficultyLevel = {
 export const sessionStorage = window.sessionStorage;
 
 export { default as accountIcon } from '../static/AccountIcon.svg';
+
+export const pageVariants = (direction: number) => ({
+	initial: { opacity: 0, y: (direction ? '' : '-') + '100vh' },
+	in: {
+		opacity: 1,
+		y: '0',
+	},
+	out: {
+		y: (direction ? '-' : '') + '100vh',
+		opacity: 0,
+	},
+});
+
+export const pageTransition = {
+	type: 'tween',
+	easing: 'easeInOut',
+	duration: 0.5,
+};

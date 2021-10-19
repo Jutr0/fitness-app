@@ -1,9 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
+import { motion } from 'framer-motion';
 import { BackArrow, HeadingWithBG, MusclePart } from '../../components';
 import { useAppDispatch } from '../../redux/hooks/hooks';
 import { IMuscle, updateMusclePart } from '../../redux/slices/musclePartSlice';
-import { MUSCLE_PARTS, sessionStorage } from '../../utils/constants';
+import {
+	MUSCLE_PARTS,
+	pageTransition,
+	pageVariants,
+	sessionStorage,
+} from '../../utils/constants';
 
 import './style.scss';
 
@@ -16,6 +22,10 @@ function Muscles() {
 		history.push('./difficulty');
 	};
 
+	const [direction, setDirection] = useState(1);
+	const handleBack = () => {
+		setDirection(0);
+	};
 	useEffect(() => {
 		sessionStorage.clear();
 		sessionStorage.setItem('change', 'true');
@@ -23,7 +33,14 @@ function Muscles() {
 
 	return (
 		<>
-			<main className="musclesContainer">
+			<motion.main
+				variants={pageVariants(direction)}
+				initial="initial"
+				animate="in"
+				exit="out"
+				className="musclesContainer"
+				transition={pageTransition}
+			>
 				<HeadingWithBG text="Wybierz ~partię@ Mięśni" />
 				{MUSCLE_PARTS.map((step) => (
 					<MusclePart
@@ -31,8 +48,8 @@ function Muscles() {
 						onClick={() => handlePickMuscle(step.muscle as IMuscle)}
 					/>
 				))}
-			</main>
-			<BackArrow />
+				<BackArrow onClick={handleBack} />
+			</motion.main>
 		</>
 	);
 }

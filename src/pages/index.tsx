@@ -1,18 +1,12 @@
-import { lazy } from 'react';
+export { default as Authentication } from './Authentication/Authentication';
+export { default as Landing } from './Landing/Landing';
 
-export const Authentication = lazy(
-	() => import('./Authentication/Authentication'),
-);
-export const Landing = lazy(() => import('./Landing/Landing'));
+export { default as Questions } from './Questions/Questions';
 
-export const Questions = lazy(() => import('./Questions/Questions'));
-
-export const Muscles = lazy(() => import('./Muscles/Muscles'));
-export const Difficulty = lazy(() => import('./Difficulty/Difficulty'));
-export const TrainingShowcase = lazy(
-	() => import('./TrainingShowcase/TrainingShowcase'),
-);
-export const Training = lazy(() => import('./Training/Training'));
+export { default as Muscles } from './Muscles/Muscles';
+export { default as Difficulty } from './Difficulty/Difficulty';
+export { default as TrainingShowcase } from './TrainingShowcase/TrainingShowcase';
+export { default as Training } from './Training/Training';
 export { default as LoadingPage } from './LoadingPage/LoadingPage';
 export { default as Summary } from './Summary/Summary';
 export { default as AccountPage } from './AccountPage/AccountPage';

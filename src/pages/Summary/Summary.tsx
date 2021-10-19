@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
+import { motion } from 'framer-motion';
 import { HeadingWithBG } from '../../components';
 import Button from '../../components/Button/Button';
 import { addWeight } from '../../firebase/firestore';
 import { useAppSelector } from '../../redux/hooks/hooks';
-import { sessionStorage } from '../../utils/constants';
+import {
+	pageTransition,
+	pageVariants,
+	sessionStorage,
+} from '../../utils/constants';
 
 import './style.scss';
 
@@ -18,6 +23,10 @@ function Summary() {
 	const [disableBtn, setDisableBtn] = useState<boolean>(false);
 
 	const user = useAppSelector((state) => state.user.value);
+	const [direction, setDirection] = useState(1);
+	const handleBack = () => {
+		setDirection(0);
+	};
 
 	const handleClick = () => {
 		history.push('/authentication', { action: 'login' });
@@ -60,7 +69,14 @@ function Summary() {
 	}, []);
 
 	return (
-		<main className="summaryContainer">
+		<motion.main
+			className="summaryContainer"
+			variants={pageVariants(direction)}
+			initial="initial"
+			animate="in"
+			exit="out"
+			transition={pageTransition}
+		>
 			<HeadingWithBG text="Podsumowanie" />
 			<div className="summaryDescription">
 				<h1>
@@ -112,7 +128,7 @@ function Summary() {
 					</div>
 				)}
 			</div>
-		</main>
+		</motion.main>
 	);
 }
 

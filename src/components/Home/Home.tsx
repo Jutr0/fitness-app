@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router';
+import { Fade } from 'react-reveal';
 
 import { Button } from '..';
 
@@ -16,12 +17,14 @@ function Home() {
 	return (
 		<div className="homeContainer">
 			<div className="homeBg" style={{ backgroundImage: `url('${bgHome}')` }}>
-				<h1 className="homeHeading">
-					Jesteś tylko
-					<span className="highlight headerHighlight"> jeden trening </span>z
-					dala od
-					<span className="highlight headerHighlight"> dobrego nastroju</span>
-				</h1>
+				<Fade bottom>
+					<h1 className="homeHeading">
+						Jesteś tylko
+						<span className="highlight headerHighlight"> jeden trening </span>z
+						dala od
+						<span className="highlight headerHighlight"> dobrego nastroju</span>
+					</h1>
+				</Fade>
 				<Button
 					arrow
 					type="outlined"

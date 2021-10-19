@@ -31,7 +31,7 @@ function Questions() {
 					className="questionSubmit"
 				/>
 			</main>
-			<BackArrow />
+			<BackArrow onClick={() => {}} />
 		</>
 	);
 }

@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { BackArrow, Button } from '../../components';
 import { IExercise } from '../../interfaces/IExercise';
 import { useAppSelector } from '../../redux/hooks/hooks';
-import { sessionStorage } from '../../utils/constants';
+import {
+	pageTransition,
+	pageVariants,
+	sessionStorage,
+} from '../../utils/constants';
 import { getExercise, nextExercise } from './functions';
 
 import './style.scss';
@@ -31,6 +36,10 @@ function Training() {
 			nextExercise();
 			setIsStarted(false);
 		}
+	};
+	const [direction, setDirection] = useState(1);
+	const handleBack = () => {
+		setDirection(0);
 	};
 
 	useEffect(() => {
@@ -60,7 +69,14 @@ function Training() {
 
 	return (
 		<>
-			<main className="training__container">
+			<motion.main
+				className="training__container"
+				variants={pageVariants(direction)}
+				initial="initial"
+				animate="in"
+				exit="out"
+				transition={pageTransition}
+			>
 				<div
 					className="training__background"
 					style={{ backgroundImage: `url('${bgTraining}')` }}
@@ -83,8 +99,8 @@ function Training() {
 					<div className="helper__text">Nie wiesz jak wykonać ćwiczenie?</div>
 					<Button arrow className="helper__button" text="Pokaż na filmie" />
 				</div>
-			</main>
-			<BackArrow />
+				<BackArrow onClick={handleBack} />
+			</motion.main>
 		</>
 	);
 }

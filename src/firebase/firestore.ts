@@ -9,13 +9,11 @@ import {
 	orderBy,
 	query,
 	setDoc,
-	updateDoc,
 	where,
 } from 'firebase/firestore';
 import { IExercise, IExerciseType } from '../interfaces/IExercise';
 import { db } from '.';
 import { User } from '@firebase/auth';
-import { currentUser } from './auth';
 
 export const getExercise = async (id: string) => {
 	const exercise: IExercise | null = await getDoc(doc(db, 'exercise', id))

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router';
 import { Button } from '..';
+import { Fade } from 'react-reveal';
 
 import './style.scss';
 const bg =
@@ -17,17 +18,21 @@ function ChangeTimeSection() {
 			className="changeTimeSectionContainer"
 			style={{ backgroundImage: `url('${bg}')` }}
 		>
-			<h1>
-				znajdź czas na <span> zmianę </span>
-			</h1>
-			<Button
-				onClick={handleClick}
-				text="ZACZYNAM"
-				type="outlined"
-				size="large"
-				color="secondary"
-				className="startBtn"
-			/>
+			<Fade bottom>
+				<h1>
+					znajdź czas na <span> zmianę </span>
+				</h1>
+			</Fade>
+			<Fade top>
+				<Button
+					onClick={handleClick}
+					text="ZACZYNAM"
+					type="outlined"
+					size="large"
+					color="secondary"
+					className="startBtn"
+				/>
+			</Fade>
 		</section>
 	);
 }

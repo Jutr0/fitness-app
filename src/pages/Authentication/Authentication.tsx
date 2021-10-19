@@ -31,7 +31,7 @@ function Authentication() {
 				/>
 				{state.action === 'register' ? <Register /> : <Login />}
 			</main>
-			<BackArrow />
+			<BackArrow onClick={() => {}} />
 		</>
 	);
 }

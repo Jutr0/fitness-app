@@ -6,7 +6,6 @@ import {
 	YAxis,
 	Tooltip,
 	Legend,
-	CartesianGrid,
 	XAxis,
 } from 'recharts';
 import colors from '../../utils/colors';
@@ -31,7 +30,6 @@ function Chart({ data, dataKey, unit }: IProps) {
 					/>
 					<Legend />
 					<XAxis hide dataKey="name" />
-					<CartesianGrid strokeDasharray="3 3" />
 				</LineChart>
 			</ResponsiveContainer>
 		</div>
