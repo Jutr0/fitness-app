@@ -116,7 +116,7 @@ export const pageVariants = (direction: number) => ({
 	initial: { opacity: 0, y: (direction ? '' : '-') + '100vh' },
 	in: {
 		opacity: 1,
-		y: '0',
+		y: 0,
 	},
 	out: {
 		y: (direction ? '-' : '') + '100vh',

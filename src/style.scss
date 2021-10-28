@@ -22,6 +22,7 @@ h1 {
 body {
 	background-color: $color-primary;
 	overflow-x: hidden;
+	scroll-behavior: smooth;
 }
 #root {
 	overflow-x: hidden;

@@ -74,6 +74,7 @@ function AccountPage() {
 						backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/fitness-app-ldi.appspot.com/o/ciezarytlo.jpg?alt=media&token=41172a89-267c-47b9-afc4-35327717ecd6')`,
 					}}
 				>
+					<div className="backgroundEmail">{user?.email || ''}</div>
 					<div className="logoutBtnContainer">
 						<Button
 							text="Wyloguj"
@@ -85,6 +86,19 @@ function AccountPage() {
 						/>
 					</div>
 				</div>
+
+				<div className="statisticsContainer">
+					<div className="statistics statistics__weight">
+						Waga: {weights[weights.length - 1]?.Waga || ''} kg
+					</div>
+					<div className="statistics statistics__height">
+						Wzrost: {height.current || ''} cm
+					</div>
+					<div className="statistics statistics__BMI">
+						BMI: {BMI[BMI.length - 1]?.BMI || ''}
+					</div>
+				</div>
+
 				<div className="chartsContainer">
 					<Chart unit=" kg" dataKey="Waga" data={weights} />
 					<Chart unit="" dataKey="BMI" data={BMI} />

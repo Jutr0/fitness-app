@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { BackArrow, Button } from '../../components';
+import { BackArrow, Button, Modal } from '../../components';
 import { IExercise } from '../../interfaces/IExercise';
 import { useAppSelector } from '../../redux/hooks/hooks';
 import {
@@ -17,6 +17,7 @@ const bgTraining =
 	'https://firebasestorage.googleapis.com/v0/b/fitness-app-ldi.appspot.com/o/bgTraining.jpg?alt=media&token=5657cb44-8355-41a9-9131-1a8854b9bdc4';
 
 function Training() {
+	const [isModalOpen, setIsModalOpen] = useState(false);
 	const difficulty = useAppSelector((state) => state.difficulty.value);
 
 	const history = useHistory();
@@ -33,6 +34,7 @@ function Training() {
 			sessionStorage.setItem('time', Date.now().toString());
 		}
 		if (timer === -1) {
+			setIsModalOpen(false);
 			nextExercise();
 			setIsStarted(false);
 		}
@@ -67,6 +69,10 @@ function Training() {
 		}
 	}, [isStarted, timer]);
 
+	const toggleModal = () => {
+		setIsModalOpen(!isModalOpen);
+	};
+
 	return (
 		<>
 			<motion.main
@@ -97,9 +103,31 @@ function Training() {
 				</div>
 				<div className="training__helper">
 					<div className="helper__text">Nie wiesz jak wykonać ćwiczenie?</div>
-					<Button arrow className="helper__button" text="Pokaż na filmie" />
+					<Button
+						arrow
+						className="helper__button"
+						text="Pokaż na filmie"
+						onClick={toggleModal}
+					/>
 				</div>
 				<BackArrow onClick={handleBack} />
+				<Modal isOpen={isModalOpen} onClose={() => toggleModal()}>
+					<iframe
+						width="790"
+						height="444"
+						src={
+							isModalOpen
+								? exercise?.exercise.video ||
+								  'https://www.youtube.com/embed/DnePdjIA0wk'
+								: ''
+						}
+						title="Pokaz ćwiczenia"
+						frameBorder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowFullScreen
+					></iframe>
+					<Button text="Rozumiem" onClick={toggleModal} />
+				</Modal>
 			</motion.main>
 		</>
 	);

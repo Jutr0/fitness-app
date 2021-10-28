@@ -4,7 +4,10 @@
 	width: 100%;
 	min-height: 100vh;
 	.background {
-		height: 20vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 30vh;
 		width: 100%;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -17,6 +20,27 @@
 			right: 16px;
 			.button {
 				width: 150px !important;
+			}
+		}
+		.backgroundEmail {
+			font-size: 3vw;
+		}
+	}
+	.statisticsContainer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+
+		.statistics {
+			font-size: 3rem;
+			margin: 64px 0;
+			padding: 0 32px;
+			text-transform: uppercase;
+			font-weight: bold;
+			border-right: 2px solid $color-secondary;
+			&:last-child {
+				border: none;
 			}
 		}
 	}

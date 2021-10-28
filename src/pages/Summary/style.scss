@@ -14,6 +14,12 @@
 		justify-content: space-evenly;
 		width: 100%;
 		padding: 64px;
+		.button {
+			font-size: 1.5rem;
+			font-weight: bolder;
+			letter-spacing: 3px;
+			margin: 16px 0;
+		}
 
 		h1 {
 			font-size: 2.2rem;
@@ -41,7 +47,7 @@
 				font-family: 'Montserrat';
 			}
 			.button {
-				margin: 32px 0;
+				margin: 16px 0;
 				font-size: 1.5rem;
 			}
 		}

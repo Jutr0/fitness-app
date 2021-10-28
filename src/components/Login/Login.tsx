@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import { Button } from '..';
-import { loginUser } from '../../firebase/auth';
+import { loginUser, resetPassword } from '../../firebase/auth';
 import { useAppDispatch } from '../../redux/hooks/hooks';
 import { updateUser } from '../../redux/slices/userSlice';
 
@@ -56,7 +56,16 @@ function Login() {
 					onClick={handleLogin}
 				/>
 			</form>
-			<div className="forgotPass"> Zapomniałeś hasła?</div>
+			<div
+				className="forgotPass"
+				onClick={() => {
+					resetPassword(email).then((res) =>
+						alert(res ? 'wysłano' : 'nieprawidłowy mail'),
+					);
+				}}
+			>
+				Zapomniałeś hasła?
+			</div>
 			<div className="downInfo" onClick={goToRegister}>
 				Nie masz konta?
 			</div>

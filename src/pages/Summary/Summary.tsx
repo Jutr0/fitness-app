@@ -58,14 +58,15 @@ function Summary() {
 
 	useEffect(() => {
 		if (sessionStorage.getItem('endTraining') !== 'true') {
-			// history.replace('/');
-		}
-		console.log(sessionStorage.getItem('time'));
-		const time = Date.now() - +sessionStorage.getItem('time')!;
+			history.replace('/');
+		} else {
+			console.log(sessionStorage.getItem('time'));
+			const time = Date.now() - +sessionStorage.getItem('time')!;
 
-		setSeconds(Math.floor(time / 1000) % 60);
-		setMinutes(Math.floor((time / 60000) % 60));
-		setHours(Math.floor((time / 3600000) % 60));
+			setSeconds(Math.floor(time / 1000) % 60);
+			setMinutes(Math.floor((time / 60000) % 60));
+			setHours(Math.floor((time / 3600000) % 60));
+		}
 	}, []);
 
 	return (
@@ -87,6 +88,12 @@ function Summary() {
 					{minutes! < 10 ? '0' + minutes : minutes}:
 					{seconds! < 10 ? '0' + seconds : seconds}
 				</div>
+				<Button
+					text="ZAKOŃCZ"
+					type="outlined"
+					color="secondary"
+					onClick={() => history.push('/')}
+				/>
 				{user ? (
 					<div className="summaryInput">
 						<form>

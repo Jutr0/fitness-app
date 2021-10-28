@@ -1,0 +1,24 @@
+.modal {
+	width: 100vw;
+	height: auto;
+	background-color: #00000050;
+	opacity: 0;
+	display: none;
+	position: fixed;
+	//top: 0;
+	left: 0;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 64px 0;
+}
+
+.modal__open {
+	opacity: 1;
+	display: flex;
+	iframe {
+		width: 90vw;
+		height: 50.625vw;
+		margin-bottom: 32px;
+	}
+}

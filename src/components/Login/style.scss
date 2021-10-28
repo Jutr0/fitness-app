@@ -1,1 +1,8 @@
 @import '../../utils/colors';
+
+.forgotPass {
+	&:hover {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+}
