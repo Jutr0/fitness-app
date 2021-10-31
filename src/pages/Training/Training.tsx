@@ -12,6 +12,7 @@ import {
 import { getExercise, nextExercise } from './functions';
 
 import './style.scss';
+import { createPortal } from 'react-dom';
 
 const bgTraining =
 	'https://firebasestorage.googleapis.com/v0/b/fitness-app-ldi.appspot.com/o/bgTraining.jpg?alt=media&token=5657cb44-8355-41a9-9131-1a8854b9bdc4';
@@ -111,23 +112,26 @@ function Training() {
 					/>
 				</div>
 				<BackArrow onClick={handleBack} />
-				<Modal isOpen={isModalOpen} onClose={() => toggleModal()}>
-					<iframe
-						width="790"
-						height="444"
-						src={
-							isModalOpen
-								? exercise?.exercise.video ||
-								  'https://www.youtube.com/embed/DnePdjIA0wk'
-								: ''
-						}
-						title="Pokaz ćwiczenia"
-						frameBorder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-						allowFullScreen
-					></iframe>
-					<Button text="Rozumiem" onClick={toggleModal} />
-				</Modal>
+				{createPortal(
+					<Modal isOpen={isModalOpen} onClose={() => toggleModal()}>
+						<iframe
+							width="790"
+							height="444"
+							src={
+								isModalOpen
+									? exercise?.exercise.video ||
+									  'https://www.youtube.com/embed/DnePdjIA0wk'
+									: ''
+							}
+							title="Pokaz ćwiczenia"
+							frameBorder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowFullScreen
+						></iframe>
+						<Button text="Rozumiem" onClick={toggleModal} />
+					</Modal>,
+					document.getElementById('root-modal')!,
+				)}
 			</motion.main>
 		</>
 	);
