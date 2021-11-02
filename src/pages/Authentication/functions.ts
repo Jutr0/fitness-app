@@ -5,7 +5,7 @@ export const validateEmail = (value: string) => {
 };
 
 export const validatePassword = (value: string) => {
-	return value.length > 5;
+	return value.length > 6;
 };
 
 export const validateRepPassword = (password: string, repPassword: string) => {

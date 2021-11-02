@@ -119,8 +119,9 @@ function Training() {
 							height="444"
 							src={
 								isModalOpen
-									? exercise?.exercise.video ||
-									  'https://www.youtube.com/embed/DnePdjIA0wk'
+									? `https://www.youtube.com/embed/${
+											exercise?.exercise.video || 'DnePdjIA0wk'
+									  }`
 									: ''
 							}
 							title="Pokaz ćwiczenia"
