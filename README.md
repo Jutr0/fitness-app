@@ -10,4 +10,5 @@ You can create an account, which let you track weight.
 - **React**
 - **Redux**
 - **TypeScript**
+- **SCSS**
 - **Firebase**
