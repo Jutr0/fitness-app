@@ -9,6 +9,7 @@ You can create an account, which let you track weight.
 ### Made with
 - **React**
 - **Redux**
+- **React Router**
 - **TypeScript**
 - **SCSS**
 - **Firebase**
